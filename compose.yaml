@@ -1,0 +1,26 @@
+services:
+
+  authentication-service:
+    image: skeet15/auth-vivelibre
+    restart: unless-stopped
+    container_name: authentication-service
+    ports:
+      - "8080:8080"
+    networks:
+      - vivelibre-network
+
+  prueba-vivelibre:
+    depends_on:
+      - authentication-service
+    image: kroyx/prueba-vivelibre:0.0.1-SNAPSHOT
+    restart: unless-stopped
+    container_name: prueba-vivelibre
+    ports:
+      - "8081:8081"
+    networks:
+      - vivelibre-network
+    environment:
+      AUTH.SERVICE.URL: http://authentication-service:8080
+
+networks:
+  vivelibre-network:
