@@ -12,7 +12,7 @@ services:
   prueba-vivelibre:
     depends_on:
       - authentication-service
-    image: kroyx/prueba-vivelibre:0.0.1-SNAPSHOT
+    image: kroyx/prueba-vivelibre
     restart: unless-stopped
     container_name: prueba-vivelibre
     ports:
