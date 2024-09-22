@@ -60,7 +60,7 @@ class AuthenticationServiceImplTest {
   }
 
   @Test
-  void testGetTokenCorrectUserReturnsEmptyResponse() throws JsonProcessingException {
+  void testGetTokenCorrectUserReturnsEmptyResponse() {
     // given
     // when
     mockServer
@@ -73,7 +73,7 @@ class AuthenticationServiceImplTest {
   }
 
   @Test()
-  void testGetTokenNotFoundUser() throws JsonProcessingException {
+  void testGetTokenBadCredentials() {
     // given
     // when
     mockServer
